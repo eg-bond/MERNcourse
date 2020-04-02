@@ -1,4 +1,5 @@
 {
   "port": 5000,
+  "jwtSecret": "eg-bond ingalator",
   "mongoUri": "mongodb+srv://eg-bond:12345qaz@cluster0-eveku.azure.mongodb.net/app?retryWrites=true&w=majority"
 }

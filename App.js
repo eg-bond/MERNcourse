@@ -4,12 +4,12 @@ const mongoose = require('mongoose');
 
 const app = express(); //инстанс экспресса
 
-
+app.use('/api/auth', require('./routes/auth.routes')); //подключаем роут который будет отвечать за авторизацию
 
 const PORT = config.get('port') || 5000; //выдергиваем порт из файла default.json либо присваиваем значение 5000 если config.get('port') = undefined
 
 async function start() { //функция для подключения к базе данных
-    try {
+    try { //обрабатывать асинхронщину с помощью try .. catch является хорошей практикой
         await mongoose.connect(config.get('mongoUri'), { //подключаемся к БД
             useNewUrlParser: true, //эти параметры нужны для нормального подключения
             useUnifiedTopology: true,
